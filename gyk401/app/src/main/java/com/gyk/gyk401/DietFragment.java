@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -18,6 +22,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class DietFragment extends Fragment {
+    List<Food> foodList;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,8 +69,26 @@ public class DietFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_diet, container, false);
+        View view = inflater.inflate(R.layout.fragment_diet,container,false);
+        foodList = new ArrayList<>();
+        foodList.add(
+                new Food("https://cdn.akakce.com/eti/eti-form-cikolata-kapli-56-gr-biskuvi-z.jpg",
+                "Çikolata","500"));
+        foodList.add(
+                new Food("https://im.haberturk.com/2018/09/06/ver1536845145/2132017_810x458.jpg",
+                        "Kahve","400"));
+        foodList.add(
+                new Food("https://i0.wp.com/umutsepetim.com/wp-content/uploads/2015/03/DSC_3612.jpg?resize=638%2C425",
+                        "Portakal Suyu","800"));
+
+        foodList.add(
+                new Food("https://listelist.com/wp-content/uploads/2018/06/yumurta-03.jpg",
+                        "Yumurta","750"));
+
+        FoodAdapter adapter = new FoodAdapter(foodList,getContext());
+        ListView listView = (ListView) view.findViewById(R.id.listViewFood);
+        listView.setAdapter(adapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
