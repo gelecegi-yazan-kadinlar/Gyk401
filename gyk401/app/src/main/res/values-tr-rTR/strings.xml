@@ -2,7 +2,7 @@
     <string name="app_name">gyk401</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Merhaba blank Fragment</string>
     <string name="healthy_hint">Eğer ofis çalışanıysan ve gün içerisinde pek hareket etme imkânı bulamıyorsan,
         işe gidiş-gelişlerinde belirli bir mesafeyi yürümeyi düşünebilirsin. Unutma!
         Sağlıklı bir yaşam için günde en az 10.000 adım atman gerekiyor!
